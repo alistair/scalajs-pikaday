@@ -1,6 +1,9 @@
-import ScalaJSKeys._
+//import ScalaJSKeys._
 
-scalaJSSettings
+lazy val root = project.in(file(".")).enablePlugins(ScalaJSPlugin)
+//scalaJSSettings
+
+//enablePlugins(ScalaJSPlugin)
 
 name := "scalajs-pikaday"
 
@@ -13,11 +16,11 @@ scalaVersion := "2.11.2"
 scalacOptions ++= Seq("-deprecation")
 
 libraryDependencies ++= Seq(
-  "org.scala-lang.modules.scalajs" %%% "scalajs-dom" % "0.6.1"
+  "org.scala-js" %%%! "scalajs-dom" % "0.7.0"
 )
 
 jsDependencies ++= Seq(
   "org.webjars" % "Pikaday" % "1.2.0" / "pikaday.js"
 )
 
-skip in packageJSDependencies := false
+//skip in packageJSDependencies := false
